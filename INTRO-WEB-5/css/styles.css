@@ -1,15 +1,17 @@
 body {
-    font-family: 'Open Sans', Arial, Tahoma;
-    /* La propiedad CSS font-family especifica una lista priorizada de uno o más nombres de familia de fuentes y/o nombres de familia genéricos para el elemento seleccionado. */
+    font-family: 'Open sans', Arial, Tahoma;
+    /*CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element. */
     font-weight: 400;
     font-size: 14px;
     color: #363636;
     background: #ededed;
 }
 
-/* Header */
+
+/* HEADER*/
 h1 {
     text-transform: uppercase;
+
 }
 
 h1 span {
@@ -18,7 +20,7 @@ h1 span {
 
 #photo-header {
     text-align: center;
-    border-bottom-color: #13b17f;
+    border-bottom-color: #8d8d8d;
     border-bottom-width: 5px;
     border-bottom-style: double;
 }
@@ -32,7 +34,6 @@ h1 span {
 
 .container {
     max-width: 900px;
-    /*La propiedad CSS max-width establece el ancho máximo de un elemento. Evita que el valor utilizado de la propiedad width sea mayor que el valor especificado por .max-width */
     background: #ffffff;
     margin-top: 80px;
     margin-left: auto;
@@ -43,14 +44,12 @@ h1 span {
 .menu ul {
     text-align: center;
     margin: auto;
-    /* La propiedad abreviada CSS de margen establece el área de margen en los cuatro lados de un elemento. */
     padding: 0%;
     list-style-type: none;
 }
 
 .menu ul li {
     display: inline-block;
-    /* La propiedad CSS de display establece si un elemento se trata como un bloque o un elemento en línea y el diseño utilizado para sus elementos secundarios, como el diseño de flujo, la cuadrícula o el flex. */
     position: relative;
 }
 
@@ -59,23 +58,24 @@ h1 span {
     color: #ffffff;
     font-size: 10px;
     text-decoration: none;
-    /* La abreviatura CSS de decoración de texto establece la apariencia de las líneas decorativas en el texto. Es una abreviatura de text-decoration-line, text-decoration-color, text-decoration-style y la nueva propiedad text-decoration-thickness. */
     display: block;
     padding: 5px;
 }
 
+/* La propiedad position de CSS especifica cómo un elemento es 
+posicionado en el documento. Las propiedades top, right, bottom, 
+y left determinan la ubicación final de los elementos posicionados. */
+
+
 .menu ul li ul {
     position: absolute;
-    /* La propiedad CSS position establece cómo se coloca un elemento en un documento. Las propiedades superior, derecha, inferior e izquierda determinan la ubicación final de los elementos colocados. */
     top: 25px;
     left: 0;
     list-style-type: none;
-    /* La propiedad CSS de tipo de lista establece el marcador (como un disco, un carácter o un estilo de contador personalizado) de un elemento de elemento de lista. */
     display: none;
     height: auto;
 }
 
-/* La pseudoclase :hover CSS coincide cuando el usuario interactúa con un elemento con un dispositivo señalador, pero no necesariamente lo activa. Por lo general, se activa cuando el usuario se desplaza sobre un elemento con el cursor (puntero del mouse). */
 .menu ul li:hover ul {
     display: block;
 }
@@ -89,23 +89,30 @@ h1 span {
     font-size: 14px;
 }
 
-/*Fin del header*/
+/* fin de header */
 h2 {
     color: #f0563d;
     text-transform: uppercase;
 }
 
 h2::before {
-    content: "// ";
+    content: "//  ";
 }
 
 .clearfix:before {
     display: table;
     line-height: 1;
+    content: "";
 }
 
+
+
+
+
+
+
 .pull-left {
-    float: left;
+    float: left
 }
 
 .row {
@@ -121,18 +128,25 @@ h2::before {
     width: 10%;
 }
 
+.col-20 {
+    width: 20%;
+}
+
 .col-40 {
     width: 40%;
+}
+
+.col-80 {
+    width: 80;
 }
 
 .col-90 {
     width: 90%;
 }
 
-/*Others*/
-.containerflex {
-    display: flex;
-}
+
+
+/***************/
 
 .education ul {
     list-style: none;
@@ -169,9 +183,14 @@ h2::before {
     left: -16px;
 }
 
+
 .experience .job .where {
     font-size: 1.2em;
     font-weight: bold;
+}
+
+.year {
+    font-size: 0.8em;
 }
 
 .profesion {
@@ -184,36 +203,70 @@ h2::before {
 
 .description {
     margin-top: 0;
-    margin-left: 3em;
+    margin-left: 2em;
     text-align: justify;
+
 }
 
-.containerskill[data-percent="80"] {
-    width: 80%;
-    background-color: #aa3535;
-}
+/* .skills {
+		list-style-type: none;
+		margin:0;
+		padding: 0;
+	}
+		.skills-item {				
+			color: #FFFFFF;
+			font-weight: bold;
+			text-transform: uppercase;
+			padding: 2px 0 2px 5px;
+			margin-top: 5px;				
+			background: #F0563D;
+			
+		}
+		.skills-item[data-percent="10"] { width: 10% }
+		.skills-item[data-percent="20"] { width: 20% }
+		.skills-item[data-percent="30"] { width: 30% }
+		.skills-item[data-percent="40"] { width: 40% }
+		.skills-item[data-percent="50"] { width: 50% }
+		.skills-item[data-percent="60"] { width: 60% }
+		.skills-item[data-percent="70"] { width: 70% }
+		.skills-item[data-percent="80"] { width: 80% }
+		.skills-item[data-percent="90"] { width: 90% } */
 
-.skills {
-    margin: 0;
-    padding: 0;
-}
+
 
 .html {
+    color: #DDDDDD;
+    margin: 3px;
+    list-style-type: none;
+    text-align: right;
     width: 90%;
     background-color: #04AA6D;
 }
 
 .css {
+    color: #DDDDDD;
+    margin: 3px;
+    list-style-type: none;
+    text-align: right;
     width: 80%;
     background-color: #2196F3;
 }
 
 .js {
+    color: #DDDDDD;
+    margin: 3px;
+    list-style-type: none;
+    text-align: right;
+    /*none;*/
     width: 65%;
     background-color: #f44336;
 }
 
 .python {
-    width: 70%;
+    color: #DDDDDD;
+    margin: 3px;
+    list-style-type: none;
+    text-align: right;
+    width: 60%;
     background-color: #808080;
 }
