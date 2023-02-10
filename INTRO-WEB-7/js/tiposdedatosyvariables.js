@@ -27,7 +27,7 @@ function operacion(a, b, c, d)
 
 function imc()
 {
-    let peso = parseInt(prompt("Cual es tu peso en (lb)?"));
+    let peso = parseInt(prompt("Cuál es tu peso en (lb)?"));
     let estatura = parseInt(prompt("Cual es tu estatura (cm)?"));
     peso = peso * 0.453592;
     estatura = estatura / 100;
