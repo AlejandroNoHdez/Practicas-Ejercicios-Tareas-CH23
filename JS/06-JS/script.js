@@ -87,3 +87,89 @@ var botonMultiplicacion = document.getElementById("botonMultiplicacion");
 var botonDivision = document.getElementById("botonDivision");
 
 var resultado = document.getElementById("resultado");
+
+//Construimos las funciones de nuestra calculadora
+
+function suma()
+{
+    let valor1 = parseInt(input1.value); //Pido numero1
+    let valor2 = parseInt(input2.value); //Pido numero2
+    let suma = valor1 + valor2; //Calculo la suma
+    resultado.innerHTML = suma; //Pongo el resultado en su lugar
+}
+
+function resta()
+{
+    let valor1 = parseInt(input1.value); //Pido numero1
+    let valor2 = parseInt(input2.value); //Pido numero2
+    let resta = valor1 - valor2; //Calculo la suma
+    resultado.innerHTML = resta; //Pongo el resultado en su lugar
+}
+
+function multiplicacion()
+{
+    let valor1 = parseInt(input1.value); //Pido numero1
+    let valor2 = parseInt(input2.value); //Pido numero2
+    let multiplicacion = valor1 * valor2; //Calculo la suma
+    resultado.innerHTML = multiplicacion; //Pongo el resultado en su lugar
+}
+
+function division()
+{
+    let valor1 = parseInt(input1.value); //Pido numero1
+    let valor2 = parseInt(input2.value); //Pido numero2
+    let division = valor1 / valor2; //Calculo la suma
+    resultado.innerHTML = division; //Pongo el resultado en su lugar
+}
+
+/*
+Cómo se crea un evento (addEventListener)
+
+    - node.addEventListener ("Evento a escuchar", lo que quiero que haga)
+
+        - node (nodo donde aterrizo el evento)
+        - addEventListener (palabra reservada para usar el evento)
+        - Evento a escuchar (click, mouseover, etc)
+        - Lo que quiero que haga (La llamada de la función)
+*/
+
+botonSuma.addEventListener("click", suma);
+botonResta.addEventListener("click", resta);
+botonMultiplicacion.addEventListener("click", multiplicacion);
+botonDivision.addEventListener("click", division);
+
+
+/*
+Manipulación del DOM
+
+    - Métodos para acceder a elementos
+
+        - document.getElementById
+        - document.getElementByClassName
+        - document.getElementByTagName
+
+    - Métodos para crear elementos
+
+        - document.createElement(etiqueta)
+        - document.createTextNode(texto) - Investigar
+
+    - Métodos para insertar elementos
+
+        - parentElement.append
+        - parentElement.insertBefore
+        - parentElement.insertAdjacentElement
+
+    - Métodos para modificar elementos
+
+        - node.outerHTML (Leer o referenciar el elemento)
+        - node.innerHTML (Modificar el elemento)
+*/
+
+//Primer paso: Definir con qué voy a interactuar (almaceno una variable)
+const textoAModificar = document.querySelector("#h1");
+
+//Creo una función que cambia de color, según el color que le paso como parámetro
+function cambiarColor(color)
+{
+    textoAModificar.style.color = color;
+}
