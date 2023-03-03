@@ -2,27 +2,106 @@ package colecciones;
 
 import java.util.*;
 
-public class MisCollection {
+public class MisCollection 
+{
 
-	public static void main(String[] args) {
-		wrapperClass();
+	public static void main(String[] args) 
+	{
+		MisCollection c = new MisCollection();
+		
+		//imprimir(c.listaCollections());
+		//imprimir(c.setCollections());
+		//imprimir(c.setTreeSet());
+		imprimir(mapCollections().values());
+		//wrapperClass();
 	}
+	
+	private static Map mapCollections()
+	{
+		Map miMap = new HashMap();
+		miMap.put("valor1", "Juan");
+		miMap.put("valor2", "Maria");
+		miMap.put("valor3", "Arturo");
+		miMap.put("valor4", "Karla");
+		
+		miMap.remove("valor3");
+		
+		return miMap;
+	}
+	
+	Set setCollections()
+	{
+		Set miSet = new HashSet();
+		miSet.add("uno");
+		miSet.add("dos");
+		miSet.add("tres");
+		miSet.add("cuatro");
+		
+		return miSet;
+	}
+	
+	
+	Set setTreeSet()
+	{
+		Set<Integer> miSet = new TreeSet();
+		miSet.add(5);
+		miSet.add(8);
+		
+		miSet.clear();
+		
+		miSet.add(10);
+		miSet.add(2);
+		miSet.add(20);
+		miSet.add(14);
+		
+		Integer[] array = miSet.toArray(new Integer[miSet.size()]);
 
-	public void listasCollections() {
+        System.out.println("Array resultante:");
+        for (Integer elemento : array) 
+        {
+            System.out.println(elemento);
+        }
+		
+		return miSet;
+	}
+	
+
+	private List listaCollections() 
+	{
 		//no se puede crear una instancia de una interfaz
 		//solo se puede declarar un objeto
 		//la clase abstracta puede ser extendida solo una vez y es padre-hija, siempre
 		List miLista = new ArrayList();
-
+		System.out.println("Tamaño de la lista antes: " + miLista.size());
+		System.out.println("Esta vacía? " + miLista.isEmpty());
+		
+		miLista.add("1");
+		miLista.add(0,2);
+		miLista.add(3);
+		miLista.add(0,"Pato");
+		
+		miLista.set(0,miLista);
+		miLista.remove(2);
+		
+		System.out.println("Tamaño de la lista después: " + miLista.size());
+		System.out.println("Esta vacía? " + miLista.isEmpty());
+		
+		boolean e = miLista.contains(2);
+		System.out.println("---> " + e);
+		
+		return miLista;
 	}
-	private void imprimir(Collection collection) {
-		for (Object elementos : collection) {
-
+	
+	private static void imprimir(Collection collection) 
+	{
+		for (Object elementos : collection) 
+		{
+			System.out.println("Elementos: " + elementos);
 		}
-
 	}
 
-	static void wrapperClass() { //static genera el objeto
+	static void wrapperClass() 
+	{ //static genera el objeto
 		//byte, short, char, long, float, int, double
 		byte numeroB = 12;
 		System.out.println("Tamaño de un byte " + Byte.SIZE);
