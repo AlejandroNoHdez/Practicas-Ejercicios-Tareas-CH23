@@ -1,0 +1,227 @@
+// Bryan Alejandro Noh Hernandez
+
+// Ejercicio 1 - Java If-Else
+import java.util.Scanner;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+        
+        int n = scanner.nextInt();
+        String result = "";
+        
+        if (n % 2 == 1) 
+        {
+            result = "Weird";
+        } 
+        else 
+        {
+            if (n >= 2 && n <= 5) 
+            {
+                result = "Not Weird";
+            } 
+            else if (n >= 6 && n <= 20) 
+            {
+                result = "Weird";
+            } 
+            else 
+            {
+                result = "Not Weird";
+            }
+        }
+        System.out.println(result);
+    }
+}
+
+// Ejercicio 2 - Java Loops II
+import java.util.*;
+
+class Solution
+{
+    public static void main(String []argh)
+    {
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++)
+        {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            
+            for (int j = 0; j < n; j++) 
+            {
+                int resultado = a;
+                for (int k = 0; k <= j; k++) 
+                {
+                    resultado += Math.pow(2, k) * b;
+                }
+                System.out.print(resultado + " ");
+            }
+            System.out.println();
+        }
+        in.close();
+    }
+}
+
+// Ejercicio 3 - Java Plus Minus
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int countPos = 0;
+        int countNeg = 0;
+        int countZero = 0;
+        
+        for (int i = 0; i < n; i++) 
+        {
+            int num = sc.nextInt();
+            if (num > 0) 
+            {
+                countPos++;
+            } 
+            else if (num < 0) 
+            {
+                countNeg++;
+            } 
+            else 
+            {
+                countZero++;
+            }
+        }
+        System.out.println((double)countPos/n);
+        System.out.println((double)countNeg/n);
+        System.out.println((double)countZero/n);
+        sc.close();
+    }
+}
+
+// Ejercicio 4 - Java Advanced Prime Checker
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.lang.reflect.*;
+import static java.lang.System.in;
+
+class Prime 
+{
+    void checkPrime(int... numbers) 
+    {
+        for (int num : numbers) 
+        {
+            if (isPrime(num)) 
+            {
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println();
+    }
+    
+    boolean isPrime(int n) 
+    {
+        if (n < 2) 
+        {
+            return false;
+        } 
+        else if (n == 2) 
+        {
+            return true;
+        } 
+        else if (n % 2 == 0) 
+        {
+            return false;
+        }
+        int sqrt = (int) Math.sqrt(n);
+        for (int i = 3; i <= sqrt; i += 2) 
+        {
+            if (n % i == 0) 
+            {
+                return false;
+            }
+        }
+        return true;
+    }     
+}
+public class Solution {
+
+	public static void main(String[] args) {
+		try{
+		BufferedReader br=new BufferedReader(new InputStreamReader(in));
+		int n1=Integer.parseInt(br.readLine());
+		int n2=Integer.parseInt(br.readLine());
+		int n3=Integer.parseInt(br.readLine());
+		int n4=Integer.parseInt(br.readLine());
+		int n5=Integer.parseInt(br.readLine());
+		Prime ob=new Prime();
+		ob.checkPrime(n1);
+		ob.checkPrime(n1,n2);
+		ob.checkPrime(n1,n2,n3);
+		ob.checkPrime(n1,n2,n3,n4,n5);	
+		Method[] methods=Prime.class.getDeclaredMethods();
+		Set<String> set=new HashSet<>();
+		boolean overload=false;
+		for(int i=0;i<methods.length;i++)
+		{
+			if(set.contains(methods[i].getName()))
+			{
+				overload=true;
+				break;
+			}
+			set.add(methods[i].getName());
+			
+		}
+		if(overload)
+		{
+			throw new Exception("Overloading not allowed");
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+
+// Ejercicio 5 - Data Structures - Java Map
+// Complete this code or write your own from scratch
+
+import java.util.*;
+import java.io.*;
+
+class Solution
+{
+	public static void main(String []argh)
+	{
+		Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        in.nextLine();
+        Map<String, Integer> phoneBook = new HashMap<String, Integer>();
+        for(int i = 0; i < n; i++)
+        {
+            String name = in.nextLine();
+            int phone = in.nextInt();
+            in.nextLine();
+            phoneBook.put(name, phone);
+        }
+        while(in.hasNext())
+        {
+            String name = in.nextLine();
+            if(phoneBook.containsKey(name))
+            {
+                System.out.println(name + "=" + phoneBook.get(name));
+            }
+            else 
+            {
+                System.out.println("Not found");
+            }
+        }
+        in.close();
+	}
+}
