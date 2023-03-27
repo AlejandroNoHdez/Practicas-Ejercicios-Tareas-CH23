@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.generation.cohorte23.jpa.model.UsuarioModel;
 
 @Repository
-public interface UsuarioRepositorio extends CrudRepository<UsuarioModel, Long> 
-{
-	public ArrayList<UsuarioModel> busquedaPorPrioridad(int prioridad);
+public interface UsuarioRepositorio extends CrudRepository<UsuarioModel, Long>{
+    
+    public ArrayList<UsuarioModel> findByPrioridad (Integer prioridad);
+
 }
