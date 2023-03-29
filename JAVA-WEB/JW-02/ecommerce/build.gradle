@@ -19,9 +19,6 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
 	implementation 'com.mysql:mysql-connector-j:8.0.32'
-	
-	
-	
 }
 
 tasks.named('test') {

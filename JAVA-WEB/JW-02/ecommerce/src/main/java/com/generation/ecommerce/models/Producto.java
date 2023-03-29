@@ -1,7 +1,21 @@
 package com.generation.ecommerce.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity // Indico que mi clase producto se convierte en una entidad JPA (persistencia de datos)
+
+@Table(name = "producto") // Especificar de forma correcta el nombre de la tabla
 public class Producto
 {
+	@Id // el campo id es la primary key
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // el campo id sera generado automaticamente por la DB
+	@Column(name = "id", unique = true, nullable = false) // especifica el nombre de la columna en la DB
+
 	// Atributos
 	private Long id;
 	private String nombre;
