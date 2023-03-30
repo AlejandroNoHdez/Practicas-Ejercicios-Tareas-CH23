@@ -21,15 +21,14 @@ public class Producto
 	private String nombre;
 	private String descripcion;
 	private String URL_Imagen;
-	private double precio;
+	private Double precio;
 
-	// Constructor vacio para el Jackson (serializar y deserealizar un objeto Java a Json)
 	public Producto()
 	{
 	}
 
 	// Constructor con todos los campos
-	public Producto(Long id, String nombre, String descripcion, String URL_Imagen, double precio)
+	public Producto(Long id, String nombre, String descripcion, String URL_Imagen, Double precio)
 	{
 		this.id = id;
 		this.nombre = nombre;
@@ -79,12 +78,12 @@ public class Producto
 		URL_Imagen = uRL_Imagen;
 	}
 
-	public double getPrecio()
+	public Double getPrecio()
 	{
 		return precio;
 	}
 
-	public void setPrecio(double precio)
+	public void setPrecio(Double precio)
 	{
 		this.precio = precio;
 	}
